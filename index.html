@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    
+<body>
+        <h1><strong> The Psych Game!</strong></h1>
+
+        <h2>Guess What I am Thinking</h2>
+    <div>
+        <p id="userchoice-text"></p>
+        <p id="computerchoice-text"></p>
+        <p id="wins-text"></p>
+        <p id="losses-text"></p>
+        <p id="ties-text"></p>
+      </div>
+ 
+ <script type="text/javascript">
+    
+   
+
+        //creates an array that list all of the computers choices
+    const computerChoices = ["a","b", "c", "d", "e", "f", "g", "h",
+                            "i", "j", "k", "l", "m", "n", "o", "p",
+                            "q", "r", "s", "t", "u", "v", "w", "x", 
+                            "y", "z"];
+
+    const wins  =  0;// change to lets
+    const loses =  0;
+    const ties  =  0;
+    const numGuess = 9;
+    const guessChoices = [];
+    
+
+
+    let userChoiceText = document.getElementById("userchoice-text");
+    let computerChoiceText = document.getElementById("computerchoice-text");
+    let winsText = document.getElementById("wins-text");
+    let lossesText = document.getElementById("losses-text");
+    let tiesText = document.getElementById("ties-text");
+
+    document.onkeyup = function(event) {
+
+            // determines guessed key
+            let userGuess = event.key;
+            console.log("User Guess:" + userGuess)
+
+        
+            //randmomly chooses options for computer to guess
+            const computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            console.log("Computer Guess:" + computerGuess);
+          //  alert("User guess: " + userGuess);
+            userChoiceText.textContent = userGuess
+    }
+    
+   
+    </script>
+
+</body>
+</html>
