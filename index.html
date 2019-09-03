@@ -1,77 +1,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel = "stylesheet" type ="text/css" href="assets/css/reset.css">
+    <title>Psychic Game</title>
 </head>
     
 <body>
         <h1><strong> The Psych Game!</strong></h1>
 
         <h2>Guess what I am thinking!</h2>
-    <div>
-        <p id="userchoice-text"></p>
-        <p id="computerchoice-text"></p>
-        <p id="wins-text"></p>
-        <p id="losses-text"></p>
-        <p id="guesses-so-far"></p>
-        <p id="guesses-left"></p>
+    <div id ="container">
+        <div id="randomLetter"></div>
+        <div> Your wins:<P id="winCounter">0</P></div>
+        <div> Your loses:<p id="lossesCounter">0</p></div>
+        <div> Guesses so far<p id="numberGuesses"></p></div>
+        <div> Guesses left<p id="lettersGuessed"></p></div>
         
       </div>
  
- <script type="text/javascript">
-    
-   
-
-        //creates an array that list all of the computers choices
-    const computerChoices = ["a","b", "c", "d", "e", "f", "g", "h",
-                            "i", "j", "k", "l", "m", "n", "o", "p",
-                            "q", "r", "s", "t", "u", "v", "w", "x", 
-                            "y", "z"];
-
-    let wins  =  0;// change to lets
-    let loses =  0;
-    let numGuess = 9;
-    let guessChoices = [];
-    
-
-
-    const userChoiceText = document.getElementById("userchoice-text");
-    const computerChoiceText = document.getElementById("computerchoice-text");
-    const winsText = document.getElementById("wins-text");
-    const lossesText = document.getElementById("losses-text");
-    const guessSofarText= document.getElementById("guesses-so-far")
-    const guessLeftText = document.getElementById("guess-left");
-
-    document.onkeyup = function(event) {
-
-            // determines guessed key
-            let userGuess = event.key;
-            console.log("User Guess:" + userGuess)
-
-        
-            //randmomly chooses options for computer to guess
-            const computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-            console.log("Computer Guess:" + computerGuess);
-          // alert("User guess: " + userGuess);
-            userChoiceText.textContent = userGuess
-            
-            computerChoiceText.textContent = computerGuess
-            //I have got the letters that are used by the computer and 
-            //the persons guess but need to get them to get counted as wins 
-            //or loses againist the choices.
-            // I am also having problems getting the guess's correct also.
-            // 
-
-            
-
-            
-    }
-    
-   
-    </script>
-
+      <script src="assets/javascript/game.js"></script>
+     
+     
 </body>
 </html>
